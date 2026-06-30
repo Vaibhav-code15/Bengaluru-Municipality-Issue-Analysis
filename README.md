@@ -14,8 +14,6 @@ Bengaluru's municipal corporation (BBMP) and allied civic agencies receive thous
 - How has complaint volume changed year over year?
 - Which wards generate the most complaints?
 
-The analysis was originally built as part of a data analyst internship assignment and is maintained here as a standalone portfolio project, following a standard EDA workflow — data loading, quality checks, feature engineering, univariate and grouped analysis, and a final summary of insights.
-
 ---
 
 ## Project Structure
@@ -51,17 +49,44 @@ The raw dataset is included in the `data/` folder. If it's missing, it can be do
 
 ---
 
-## Methodology
+## Analysis Workflow
 
-The notebook follows a structured EDA approach:
-
-1. **Data Loading & Overview** — inspecting shape, data types, and column structure
+1. **Data Overview** — inspecting shape, data types, and column structure
 2. **Data Quality Assessment** — checking for missing values and duplicate records
 3. **Feature Engineering** — parsing inconsistent date formats and extracting year, month, and day-of-week
-4. **Univariate Analysis** — distribution of complaints across categories, sub-categories, status, and agencies
-5. **Grouped Analysis** — resolution rates by agency, complaint concentration by ward
-6. **Trend Analysis** — year-wise and month-wise complaint volume
-7. **Key Insights** — translating chart-level observations into actionable findings
+4. **Complaint Category Analysis** — most frequently reported categories and sub-issues
+5. **Complaint Status Analysis** — breakdown of complaints by resolution status
+6. **Civic Agency Analysis** — complaint distribution across responsible agencies
+7. **Complaint Trends** — year-wise complaint volume across the study period
+8. **Key Insights** — summarizing findings from the analysis
+
+---
+
+## Key Insights
+
+- Road infrastructure and sanitation-related issues account for a significant share of reported complaints — *Mobility (Roads, Footpaths & Infrastructure)* and *Garbage and Unsanitary Practices* together make up over 56% of all complaints.
+- **BBMP** handles the overwhelming majority of complaints (12,824 of 16,071), with all other agencies — BTP, BWSSB, KSPCB, BESCOM — receiving far smaller shares.
+- Of all complaints, **54.9% remain Open** and only **30.7% are marked Resolved**, indicating a significant backlog in complaint handling. A further 2.1% were Re-opened after closure.
+- Complaint volumes declined **79%**, from 7,383 in 2019 to 1,551 in 2022. The steepest drop occurred in 2020, likely linked to COVID-19 lockdowns reducing citizen mobility and reporting activity. The continued decline post-2020 may reflect service improvements, lower platform engagement, or incomplete data capture for later years.
+- Complaint reporting is concentrated in a limited number of wards — **Bellanduru, Begur, and Horamavu** report the highest volumes, pointing to localized service demand.
+
+---
+
+## Visualizations
+
+**Top Complaint Categories**
+
+![Top Complaint Categories](plots/chart_01_top_complaint_categories.png)
+
+**Complaint Distribution by Civic Agency**
+
+![Civic Agency Distribution](plots/chart_04_civic_agency_distribution.png)
+
+**Annual Complaint Trend (2019–2022)**
+
+![Annual Complaint Trend](plots/chart_06_annual_complaint_trend.png)
+
+Additional charts (sub-issues, status distribution, ward-level breakdown) are available in the `plots/` folder and inside the notebook.
 
 ---
 
@@ -105,7 +130,7 @@ Run all cells top to bottom (`Kernel → Restart & Run All`). All charts will re
 
 ## Presentation
 
-A 3-slide summary presentation (`BLR_Municipality_EDA_Slides.pptx`) is included in this repository, covering the project overview, key complaint categories, and overall complaint trends — intended as a quick-glance summary for non-technical stakeholders.
+A 3-slide summary presentation (`BLR_Municipality_EDA_Slides.pptx`) is included in this repository, covering the project overview, key complaint categories, and overall complaint trends.
 
 ---
 
